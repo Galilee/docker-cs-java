@@ -2,13 +2,6 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-  <localRepository>/root/.m2/repository</localRepository>
-  <pluginGroups>
-  </pluginGroups>
-
-  <proxies>
-  </proxies>
-
   <servers>
     <server>
       <id>central</id>
@@ -26,7 +19,7 @@
     <mirror>
       <id>central</id>
       <name>central</name>
-      <url>https://nexus.galilee.fr/repository/galilee-all/</url>
+      <url>https://nexus.galilee.fr/repository/galilee-all</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
