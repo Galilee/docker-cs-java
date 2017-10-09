@@ -6,8 +6,7 @@ RUN apk add --no-cache \
         wget \
         curl \
         git \
-        openssh-client \
-	&& chsh -s /bin/bash
+        openssh-client
 
 RUN mkdir -p /root/.ssh
 COPY resources/ssh_config /root/.ssh/config
