@@ -1,9 +1,13 @@
 FROM maven:3.5-jdk-8-alpine
 MAINTAINER Gabriel Malet <gmalet@galilee.fr>
 
-RUN apk update \
-    && apk add bash wget curl git openssh-client \
-    && rm -rf /var/cache/apk/*
+RUN apk add --no-cache \
+        bash \
+        wget \
+        curl \
+        git \
+        openssh-client \
+	&& chsh -s /bin/bash
 
 RUN mkdir -p /root/.ssh
 COPY resources/ssh_config /root/.ssh/config
