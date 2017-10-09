@@ -5,6 +5,8 @@ RUN apk update \
     && apk add bash wget curl git openssh-client \
     && rm -rf /var/cache/apk/*
 
+RUN mkdir -p /root/.ssh
+COPY resources/ssh_config /root/.ssh/config
 COPY resources/settings.xml /root/.m2/settings.xml
 
 COPY resources/entrypoint.sh /entrypoint.sh
