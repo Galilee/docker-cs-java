@@ -4,13 +4,12 @@ set -e
 
 # Check private key
 if [ -z "$SSH_PRIVATE_KEY" ]; then
-	echo >&2 'error: missing SSH_PRIVATE_KEY variable'
-	exit 1
+	echo >&2 'warning: missing SSH_PRIVATE_KEY variable'
+else
+    eval $(ssh-agent -s)
+    ssh-add <(echo "$SSH_PRIVATE_KEY")
+    unset SSH_PRIVATE_KEY
 fi
-
-eval $(ssh-agent -s)
-ssh-add <(echo "$SSH_PRIVATE_KEY")
-unset SSH_PRIVATE_KEY
 
 # Replace nexus variables
 sed -i \
